@@ -1,12 +1,16 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom'
-import '../index.twstyled.css'
-import './index.css'
-import App from './App'
+import { StrictMode } from "react";
+import ReactDOM from "react-dom";
+import { HashRouter as Router } from "react-router-dom";
+
+import App from "./core/app";
+import "../index.twstyled.css";
+import "./utils/gloabls.css";
 
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);

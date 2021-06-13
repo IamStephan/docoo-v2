@@ -1,8 +1,7 @@
 {
-  "name": "electron-vite-react",
-  "description": "This Starter utilizes Electron, TypeScript, Vite, React, Tailwind CSS with twstyled CSS in JS. It tries to adhere to best practices.",
-  "version": "1.0.1",
-  "license": "MIT",
+  "name": "docoo",
+  "description": "",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "clean": "rimraf yarn.lock && rimraf ./**/.next && rimraf dist && rimraf ./**/out && rimraf {**/,}node_modules",
@@ -26,6 +25,8 @@
     "framer-motion": "3.7.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
@@ -33,14 +34,16 @@
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router": "^5.1.15",
+    "@types/react-router-dom": "^5.1.7",
     "@vitejs/plugin-react-refresh": "^1.1.0",
     "chalk": "^4.1.0",
     "concurrently": "^6.0.0",
     "cross-env": "^7.0.3",
-    "env-cmd": "^10.1.0",
     "electron": "^11.3.0",
     "electron-builder": "^22.9.1",
     "electron-notarize": "^1.0.0",
+    "env-cmd": "^10.1.0",
     "esbuild": "^0.8.53",
     "esbuild-register": "^2.0.0",
     "eslint": "^7.20.0",
@@ -54,17 +57,14 @@
     "@linaria/babel-preset": "npm:@twstyled/linaria-babel-preset@3.0.0-beta.1",
     "@linaria/preeval": "npm:@twstyled/linaria-preeval@3.0.0-beta.1"
   },
-  "author": "twstyled contributors",
-  "browserslist": [
-    "last 1 electron version"
-  ],
+  "author": "Stephan Burger",
   "build": {
     "directories": {
       "output": "dist",
       "buildResources": "public"
     },
-    "appId": "dev.twstyled.app",
-    "productName": "twstyled-app",
+    "appId": "dev.docoo.app",
+    "productName": "Docoo",
     "afterSign": "scripts/notarize.js",
     "mac": {
       "category": "public.app-category.developer-tools",
@@ -74,13 +74,7 @@
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "entitlements": ".config/entitlements.mac.plist",
-      "entitlementsInherit": ".config/entitlements.mac.plist",
-      "publish": [
-        {
-          "provider": "generic",
-          "url": "https://files.twstyled.com/releases/${name}/${os}/"
-        }
-      ]
+      "entitlementsInherit": ".config/entitlements.mac.plist"
     },
     "dmg": {
       "background": "public/dmgBackground.png",
@@ -104,14 +98,8 @@
       ]
     },
     "win": {
-      "publisherName": "twstyled contributors",
-      "sign": null,
-      "publish": [
-        {
-          "provider": "generic",
-          "url": "https://files.twstyled.com/releases/${name}/${os}/"
-        }
-      ]
+      "publisherName": "From People",
+      "sign": null
     },
     "asar": false,
     "extraMetadata": {
@@ -140,8 +128,5 @@
         "to": "./assets"
       }
     ]
-  },
-  "workspaces": [
-    "lib-twstyled/packages/*"
-  ]
+  }
 }
