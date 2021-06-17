@@ -1,41 +1,41 @@
 {
   "search.useIgnoreFiles": false,
   "search.exclude": {
-      "**/.next": true,
-      "**/build": true,
-      "**/node_modules": true,
-      "**/out": true,
-      "**/script.js": true,
-      "**/*-cache": true,
-      "**/dist": true,
-      "yarn.lock": true,
-      "**/*.mdx": true
+    "**/.next": true,
+    "**/build": true,
+    "**/node_modules": true,
+    "**/out": true,
+    "**/script.js": true,
+    "**/*-cache": true,
+    "**/dist": true,
+    "yarn.lock": true,
+    "**/*.mdx": true
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSaveTimeout": 6000,
   "css.lint.unknownAtRules": "ignore",
   "eslint.options": {
     "configFile": "./.config/.eslintrc.js"
   },
   "eslint.lintTask.options": "-c ${workspaceRoot}/.config/.eslintrc.js --ext .ts,.js,.tsx .",
-  "eslint.lintTask.enable": true, 
+  "eslint.lintTask.enable": true,
   "[javascript]": {
     "editor.formatOnSave": true
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[json]": {
-    "editor.formatOnSave": true   
+    "editor.formatOnSave": true
   },
   "eslint.validate": [
     "javascript",
@@ -52,5 +52,27 @@
     "javascript": "javascriptreact",
     "typescript": "javascript",
     "typescriptreact": "javascriptreact"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#370D82",
+    "titleBar.activeBackground": "#4D12B6",
+    "titleBar.activeForeground": "#FDFBFF"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "@tailwind ([^;]*)",
+    "tw=\"([^\"]*)",
+    "tw='([^']*)",
+    "tw={`([^`}]*)"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "files.autoSave": "onFocusChange",
+  "headwind.classRegex": {
+    "html": "\\bclass\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\']",
+    "css": "\\B@apply\\s+([_a-zA-Z0-9\\s\\-\\:\\/]+);",
+    "javascript": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)",
+    "javascriptreact": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)",
+    "typescript": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)",
+    "typescriptreact": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)"
   }
 }
