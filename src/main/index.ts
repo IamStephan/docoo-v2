@@ -12,20 +12,22 @@ function createWindow() {
   const windowOptions: BrowserWindowConstructorOptions = {
     minWidth: 800,
     minHeight: 600,
-    backgroundColor: resolvedTailwindConfig.theme.colors.primary[800],
+    backgroundColor: 'white',
     titleBarStyle: 'hidden',
     autoHideMenuBar: true,
+    frame: false,
     trafficLightPosition: {
       x: 20,
-      y: 32
+      y: 32,
     },
     webPreferences: {
-      contextIsolation: true,
+      enableRemoteModule: true,
       devTools: isDevelopment,
       spellcheck: false,
-      nodeIntegration: true
+      contextIsolation: false,
+      nodeIntegration: true,
     },
-    show: false
+    show: false,
   }
 
   contextMenu({
@@ -33,14 +35,14 @@ function createWindow() {
     showCopyImage: false,
     prepend: (defaultActions, params, browserWindow) => [
       {
-        label: 'its like magic 💥'
-      }
-    ]
+        label: 'its like magic 💥',
+      },
+    ],
   })
 
   const windowState = windowStateKeeper({
     defaultWidth: windowOptions.minWidth,
-    defaultHeight: windowOptions.minHeight
+    defaultHeight: windowOptions.minHeight,
   })
 
   const browserWindow = new BrowserWindow({
@@ -48,7 +50,7 @@ function createWindow() {
     x: windowState.x,
     y: windowState.y,
     width: windowState.width,
-    height: windowState.height
+    height: windowState.height,
   })
 
   windowState.manage(browserWindow)
