@@ -21,6 +21,7 @@
     "@twstyled/theme": "^3.2.4",
     "@twstyled/util": "^3.2.4",
     "electron-context-menu": "^2.5.0",
+    "electron-util": "^0.16.0",
     "electron-window-state": "^5.0.3",
     "framer-motion": "3.7.0",
     "react": "^17.0.0",
@@ -47,10 +48,11 @@
     "esbuild": "^0.8.53",
     "esbuild-register": "^2.0.0",
     "eslint": "^7.20.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.1.2",
     "vite": "^2.0.4",
+    "vite-plugin-react-svg": "^0.2.0",
     "vite-plugin-twstyled": "^3.2.4"
   },
   "resolutions": {
